@@ -5,7 +5,7 @@ resource "aws_vpc" "vpc" {
 
 
 resource "aws_vpc" "vpc_alias" {
-  cidr_block = var.block_cidr
+  cidr_block = var.block_cidr_alias
   tags = var.vpc_tags
   provider = aws.aws-us-east-1
 }

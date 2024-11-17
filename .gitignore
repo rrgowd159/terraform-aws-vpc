@@ -37,3 +37,4 @@ override.tf.json
 terraform.rc
 c1.versions.tf
 new/
+.terraform.lock.hcl
