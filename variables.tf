@@ -11,3 +11,9 @@ variable "vpc_tags" {
     "Env" = "Test"
   }
 }
+
+variable "block_cidr_alias" {
+  description = "This is cidr block for vpc"
+  type = string
+  default = "10.0.0.0/16"
+}
