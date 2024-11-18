@@ -1,10 +1,11 @@
 resource "aws_vpc" "vpc" {
-  cidr_block = var.vpc_cidr
-  tags = var.vpc_tags
+  cidr_block = var.cidr_block
+  tags = var.tags
+  
 }
 
-resource "aws_subnet" "vpc_subnet" {
-  cidr_block = var.subnet_cidr
+resource "aws_subnet" "public_subnet" {
+  cidr_block = var.public_subnet_cidrs["0"]
   vpc_id = aws_vpc.vpc.id
   availability_zone = "us-east-1a"
 }
@@ -24,6 +25,6 @@ resource "aws_route" "vpc_route" {
 }
 
 resource "aws_route_table_association" "vpc_subnet_association" {
-  subnet_id = aws_subnet.vpc_subnet.id
+  subnet_id = aws_subnet.public_subnet.id
   route_table_id = aws_route_table.vpc_route_table.id
 }
