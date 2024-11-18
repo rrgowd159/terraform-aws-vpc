@@ -7,3 +7,7 @@ output "vpc_id" {
 output "vpc_tags" {
   value = aws_vpc.vpc.tags_all
 }
+
+output "vpc_dns_hostnames" {
+  value = aws_vpc.vpc.enable_dns_hostnames
+}
